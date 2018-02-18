@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Spa Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <div class="head_panel text-center">
+    <img src="assets/imgs/logo1.png">
+  </div>
+
+  <div padding>
+        <form [formGroup]="spatodo" (ngSubmit)="loginSpa()">
+            
+            <ion-input type="text" formControlName="user" placeholder="Username"></ion-input>
+          
+            <ion-input type="password" formControlName="pass" placeholder="Password"></ion-input>
+
+            <button ion-button  full class="checkin" type="submit" [disabled]="!spatodo.valid">Login</button>
+      </form>
+    </div>
+
+</ion-content>

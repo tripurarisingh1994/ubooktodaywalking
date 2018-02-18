@@ -3,21 +3,33 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Catergory List</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [disabled]="!cart_no" (click)="goCartSubmit()">
+        <ion-icon name="cart"><ion-badge item-end>{{cart_no}}</ion-badge></ion-icon>
+      </button>
+    </ion-buttons>
+   
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+ 
+  <ion-card>
+    <ion-card-header>
+      <b>{{ex_fn}}   {{ex_ln}}</b>
+    </ion-card-header>
+    <ion-card-content>
+     <p>{{ex_email_id}}</p>
+     <p>{{ex_mob}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngFor="let dNew of dataNew">
+      <button ion-item (click)="goToListDetails(dNew.id_subtreatement)">
+        <p>{{dNew.subtreatement_name}}</p>
+        <!-- <p>{{dNew.id_subtreatement}}</p> -->
+      </button>
   </div>
-</ion-content>
+
+</ion-content> 

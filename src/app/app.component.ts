@@ -2,9 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Storage } from '@ionic/storage'
+import { SpaloginPage } from '../pages/spalogin/spalogin';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { LogoutPage } from '../pages/logout/logout';
+// import { CartSubmitPage } from '../pages/cart-submit/cart-submit';
+// import { BookServiceProvider } from '../providers/book-service/book-service';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +16,29 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SpaloginPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private storage: Storage,
+    // private menuCtrl: MenuController,
+    // private bookService:BookServiceProvider
+  ) {
     this.initializeApp();
 
+    this.storage.get('email').then((val)=> {
+      this.rootPage = val ? HomePage : SpaloginPage;
+    })
+    //  if(this.bookService.cart.length==0) {
+    //    this.menuCtrl.enable(false,'Cart');
+    //  }
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      // { title: 'Cart', component: CartSubmitPage },
+      { title: 'Logout', component: LogoutPage },
     ];
 
   }

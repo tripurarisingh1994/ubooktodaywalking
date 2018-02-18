@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Service List</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [disabled]="!cart_no" (click)="goCartSubmit()">
+        <ion-icon name="cart"><ion-badge item-end>{{cart_no}}</ion-badge></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let dt of dataT"> 
+    <!-- <div [ngIf]="dt.upload_image != ''"> -->
+        <img src="http://staging.ubooktoday.com/public/uploads/images/{{dt.upload_image}}">
+    <!-- </div> -->
+       
+    <ion-card-content>
+      <ion-card-title>
+          {{dt.servicename}}
+        </ion-card-title>
+      <p>
+         {{dt.service_description}}
+      </p>
+      <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <P>Price : ${{dt.full_price}}</P>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button class="checkin" (click)="bookService(dt.service_id,dt.servicename)">Book</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

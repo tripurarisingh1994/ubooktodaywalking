@@ -1,0 +1,33 @@
+page-spalogin {
+    .head_panel{
+        float: left;
+        width: 100%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    ion-input{
+        border-bottom: 1px solid #eb4c8d;
+    }
+        .text-center{
+            text-align: center;
+        }
+        .list-ios > .item-block:first-child
+        {
+         	border-top-color: #fff;;
+    		border-top-style: none;
+        }
+
+        .checkin {
+            background-color: #eb4c8d;
+        }
+        // .bg {
+        //     background-image: url('../assets/imgs/bg.png');
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     width: 100%;
+        //     background-position: center;
+        //     float: left;
+        //     padding-bottom: 30px;
+        //     margin-top:10px;
+        // }
+}

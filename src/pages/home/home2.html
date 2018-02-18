@@ -26,39 +26,69 @@
   <div [ngSwitch]="cust">
     <ion-card>
         <div *ngSwitchCase="'existcust'" padding>
-                  <!-- <ion-searchbar
+            <div padding>
+                <ion-segment [(ngModel)]="emailphone">
+                 <ion-segment-button value="email">
+                  Search By Email
+                 </ion-segment-button>
+                 <ion-segment-button value="phone">
+                   Search By Phone
+                 </ion-segment-button>
+                 </ion-segment>
+           </div>
+           <div [ngSwitch]="emailphone">
+              <div *ngSwitchCase="'email'" padding>
+                  <!-- <form [formGroup]="todo" (ngSubmit)="logForm()">
+                      <ion-item>
+                        <ion-input type="text" (keyup)="onKey($event)" formControlName="email" [(ngModel)]="fullname" placeholder="Email"></ion-input>
+                      </ion-item>
+                      <div *ngIf="exist_cust_full">
+                        <ion-item *ngFor="let fullname of exist_cust_full" (click)="setFullName(fullname)">
+                          {{ fullname }}
+                        </ion-item>
+                      </div>
+                      <button ion-button full class="checkin topchck btnspcr" type="submit" [disabled]="!todo.valid">Check In</button>
+                  </form> -->
+                  <ion-searchbar
                         [(ngModel)]="emailInput"
                         (ionInput)="onEmailInput($event)"
                         (ionClear)="onClear($event)"
-                        placeholder="Email or Phone"
+                        placeholder="Email"
                         type="email">
                   </ion-searchbar>
                   <div *ngIf="exist_cust_full">
                     <ion-item *ngFor="let fullname of exist_cust_full" (click)="setFullName(fullname)">
                       {{ fullname }}
                     </ion-item>
-                  </div>  -->
-                   <form [formGroup]="todo" (ngSubmit)="logForm()">
+                  </div> 
+              </div>
+              <div *ngSwitchCase="'phone'" padding>
+                  <!-- <form [formGroup]="todo" (ngSubmit)="logForm()">
                       <ion-item>
-                        <ion-input type="text" formControlName="email"  placeholder="Email or Phone"></ion-input>
+                        <ion-input type="text" (keyup)="onKey($event)" formControlName="email" [(ngModel)]="fullname" placeholder="Phone"></ion-input>
                       </ion-item>
+                      <div *ngIf="exist_cust_full">
+                        <ion-item *ngFor="let fullname of exist_cust_full" (click)="setFullName(fullname)">
+                          {{ fullname }}
+                        </ion-item>
+                      </div>
                       <button ion-button full class="checkin topchck btnspcr" type="submit" [disabled]="!todo.valid">Check In</button>
-                  </form>
-                  <button ion-button full (click)="showPhoneFormat()">
-                    View Phone Format
-                  </button>
-                  <ion-card *ngIf="isHidden">
-                    <ion-card-header text-center>
-                        <p>Please try to type in </p>
-                         <p>different format!</p>
-                    </ion-card-header>
-                   <ion-card-content text-center>
-                        <p>(111)-222-3333</p>
-                        <p>111-222-3333</p>
-                        <p>1112223333</p>
-                   </ion-card-content>
-                  </ion-card>
-           </div>
+                  </form> -->
+                  <ion-searchbar
+                        [showCancelButton]="shouldShowCancel"
+                        (ionInput)="onPhoneInput($event)"
+                        (ionCancel)="onPhoneCancel()"
+                        placeholder="Phone"
+                        type="text">
+                  </ion-searchbar>
+                  <div *ngIf="exist_cust_full">
+                    <ion-item *ngFor="let fullname of exist_cust_full" (click)="setFullName(fullname)">
+                      {{ fullname }}
+                    </ion-item>
+                  </div>
+              </div>
+           </div>      
+      </div>
    </ion-card>
 <ion-card>
   <div *ngSwitchCase="'newcust'" padding>
@@ -71,9 +101,9 @@
             </div> -->
             <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert alert-danger">
             
-              <!-- <div *ngIf="firstname.errors.required">
+              <div *ngIf="firstname.errors.required">
                 FirstName is required.
-              </div> -->
+              </div>
               <!-- <div *ngIf="firstname.errors.pattern">
                 FirstName must be alphabate.
               </div> -->
@@ -87,9 +117,9 @@
             </div> -->
             <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
             
-              <!-- <div *ngIf="lastname.errors.required">
+              <div *ngIf="lastname.errors.required">
                 LastName is required.
-              </div> -->
+              </div>
               <!-- <div *ngIf="lastname.errors.pattern">
                 LastName must be alphabate.
               </div> -->
@@ -104,9 +134,9 @@
             </div> -->
             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
             
-              <!-- <div *ngIf="email.errors.required">
+              <div *ngIf="email.errors.required">
                 Email is required.
-              </div> -->
+              </div>
               <div *ngIf="email.errors.pattern">
                 Email format should be joe@abc.com
               </div>
@@ -121,9 +151,9 @@
             </div> -->
             <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
             
-              <!-- <div *ngIf="mobile.errors.required">
+              <div *ngIf="mobile.errors.required">
                 Mobile is required.
-              </div> -->
+              </div>
               <!-- <div *ngIf="mobile.errors.pattern">
                 Mobile should be only numeric
               </div>
@@ -138,7 +168,7 @@
           <button ion-button full class="checkin" type="submit" [disabled]="!todo1.valid">Check In</button>
       </form>
       <div >
-        <!-- <button ion-button  full class="btnspcr topchck" (click)="fbLogin()"><ion-icon name="logo-facebook"></ion-icon>Check In With Facebook</button> -->
+        <button ion-button  full class="btnspcr topchck" (click)="fbLogin()"><ion-icon name="logo-facebook"></ion-icon>Check In With Facebook</button>
       </div>
       </div>
    </ion-card>
