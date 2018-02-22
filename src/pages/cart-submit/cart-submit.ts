@@ -54,8 +54,9 @@ export class CartSubmitPage {
           if(data['message']=='Successfully Booked') {
             this.bookService.cart=[];
             this.presentAlert('UbookToday',"Booking successfully.Please have a sit!")
-          }else {
+          }else if(data['message']=='Staff not available for all the services! Please remove some service and try again.'){
             console.log('Booking Failed')
+            this.presentAlert('UbookToday','Booking Failed')
           }
         })
 

@@ -35,12 +35,15 @@ export class SpaloginPage {
       if (data['message'] == 'Your username/password combination was incorrect') {
         this.presentAlert('Spa Login', 'Incorrect username or password');
       }
-      else {
+      else if(data['message'] == 'Successfully login'){
         this.navCtrl.setRoot(HomePage);
         this.storage.set('fname', data['data'].firstname)
         this.storage.set('lname', data['data'].lastname)
         this.storage.set('email', data['data'].email)
         this.storage.set('spa_id', data['data'].id)
+      }
+      else {
+        this.presentAlert('Spa Login', 'Incorrect username or password'); 
       }
     })
   }
