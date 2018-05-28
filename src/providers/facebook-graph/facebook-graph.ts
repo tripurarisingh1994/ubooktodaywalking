@@ -4,8 +4,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class FacebookGraphProvider {
 
-  private url='http://ubooktoday.com/android/walkin/fbnewcustomer?';
-  private url1='http://ubooktoday.com/android/walkin/customerph?';
+  // private url='http://staging.ubooktoday.com/android/walkin/fbnewcustomer?';
+  // private url1='http://staging.ubooktoday.com/android/walkin/customerph?';
+  private url='https://ubooktoday.com/android/walkin/fbnewcustomer?';
+  private url1='https://ubooktoday.com/android/walkin/customerph?';
   constructor(public http: HttpClient) {
     console.log('Hello FacebookGraphProvider Provider');
   }

@@ -1,8 +1,8 @@
 page-home  {
 
-    .item-input ion-input, .item-input ion-textarea {
-        border-bottom: 1px solid #eb4c8d;
-    }
+    // .item-input ion-input, .item-input ion-textarea {
+    //     border-bottom: 1px solid #eb4c8d;
+    // }
 .checkin {
     background-color: #eb4c8d;
 }
@@ -33,74 +33,14 @@ page-home  {
         padding-bottom: 30px;
         margin-top:10px;
     }
-//     .xyz
-//     {
-//     background-color: transparent;
-//     }
-//     .list-ios > .item-block:first-child
-//     {
-//      border-top-color: transparent;
-//     border-top-style: none;
-//     }
-//     .xyz > .item-ios
-//     {
-//     background-color: transparent !important;
-//     color:#fff !important;
-//     }
-  
-//     ion-segment {
-//         display: block;
-//         white-space: nowrap;
-//         font-size: 0;
-//         overflow: auto;
-//      }
-//         &::-webkit-scrollbar {
-//             width: 0;
-//             height: 0;
-//             display: none;
-//         }
-    
-//         ion-segment-button.segment-button {
-//             display: inline-block;
-//             min-width: 100px;
-//             width: auto;
-//         }
-
-//     .item-md
-//     {
-//     background-color: transparent !important;
-//     }
-//     .item-ios
-//     {
-//     background-color: transparent !important;
-//     color:#fff !important;
-//     }
-//     .colorwhite
-//     {
-//     padding-top:15px;
-//     }
-//     .topchck
-//     {
-//     margin-top:15px;
-//     }
-//     .btnspcr
-//     {
-//         margin-left:5%;
-//         margin-right:5%;
-//         width:90%
-//     }
-//     .item-block
-//     {
-//     width:94% !important;
-//     }
-//     }
-//         .ion-logo-facebook
-//     {
-//     margin-right:8px;
-//     }
-//     .button-inner
-//     {
-//     text-transform:capitalize;
-    }
+    // .country-code .input-wrapper  {
+    //     border-bottom: 1px solid #eb4c8d;
+    // }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+}
 
 

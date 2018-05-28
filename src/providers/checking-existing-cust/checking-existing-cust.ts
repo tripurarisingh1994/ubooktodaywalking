@@ -6,7 +6,8 @@ import { Injectable} from '@angular/core';
 @Injectable()
 export class CheckingExistingCustProvider  {
   
-  private url = 'http://ubooktoday.com/android/walkin/spafetchWalkinCustomerEml?searchKey='
+  private url = 'https://ubooktoday.com/android/walkin/spafetchWalkinCustomerEml?searchKey='
+  // private url = 'http://staging.ubooktoday.com/android/walkin/spafetchWalkinCustomerEml?searchKey='
   // _url = "staging.ubooktoday.com/android/walkin?userid=";
   constructor(public http: HttpClient) {
     console.log('Hello CheckingExistingCustProvider Provider');

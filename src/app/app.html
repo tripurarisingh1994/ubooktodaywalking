@@ -1,16 +1,21 @@
-<ion-menu [content]="content">
+<ion-menu persistent="ture" [content]="content" (ionClose)="collapseMenuOptions()">
   <ion-header>
     <ion-toolbar>
+      <!-- <ion-title>{{ (sideMenuSetting.accordionMode ? 'Accordion' : 'Default') + ' menu'}}</ion-title> -->
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
+    <!-- <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-    </ion-list>
+    </ion-list> -->
+    <!-- side menu content -->
+    
+    <side-menu-content [settings]="sideMenuSettings" [options]="options" (change)="onOptionsSelected($event)"></side-menu-content>
+ 
   </ion-content>
 
 </ion-menu>

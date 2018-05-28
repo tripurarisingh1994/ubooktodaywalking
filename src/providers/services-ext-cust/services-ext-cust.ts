@@ -10,7 +10,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ServicesExtCustProvider {
 
-  private url="http://ubooktoday.com/android/walkin/showServicesExtCust?"
+  private url="https://ubooktoday.com/android/walkin/showServicesExtCust?"
+  // private url="http://staging.ubooktoday.com/android/walkin/showServicesExtCust?"
   // private url="http://192.168.200.9/ubooktoday/android/walkin/showServicesExtCust?"
   constructor(public http: HttpClient) {
     console.log('Hello ServicesExtCustProvider Provider');

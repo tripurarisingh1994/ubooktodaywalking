@@ -8,7 +8,8 @@ export class BookServiceProvider {
   public cartName = [];
   public x:string='';
   // public cartno:number;
-  private url = "http://ubooktoday.com/android/walkin/spasavewalkinbooking?";
+  private url = "https://ubooktoday.com/android/walkin/spasavewalkinbooking?";
+  // private url = "http://staging.ubooktoday.com/android/walkin/spasavewalkinbooking?";
   constructor(public http: HttpClient) {
     console.log('Hello BookServiceProvider Provider');
   }
